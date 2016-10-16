@@ -7,3 +7,12 @@ c:\users\erik\documents\visual studio 2015\Projects\Osu!DiffiCalc\Osu!DiffiCalc\
 c:\users\erik\documents\visual studio 2015\Projects\Osu!DiffiCalc\Osu!DiffiCalc\obj\Debug\Osu!DiffiCalc.csproj.GenerateResource.Cache
 c:\users\erik\documents\visual studio 2015\Projects\Osu!DiffiCalc\Osu!DiffiCalc\obj\Debug\Osu!DiffiCalc.exe
 c:\users\erik\documents\visual studio 2015\Projects\Osu!DiffiCalc\Osu!DiffiCalc\obj\Debug\Osu!DiffiCalc.pdb
+C:\Users\Erik\Documents\Visual Studio 2015\Projects\Osu-NPS-Calculator-master\Osu-NPS-Calculator-master\Osu!DiffiCalc\bin\Debug\Osu!DiffiCalc.exe.config
+C:\Users\Erik\Documents\Visual Studio 2015\Projects\Osu-NPS-Calculator-master\Osu-NPS-Calculator-master\Osu!DiffiCalc\obj\Debug\Osu!DiffiCalc.exe
+C:\Users\Erik\Documents\Visual Studio 2015\Projects\Osu-NPS-Calculator-master\Osu-NPS-Calculator-master\Osu!DiffiCalc\obj\Debug\Osu!DiffiCalc.pdb
+C:\Users\Erik\Documents\Visual Studio 2015\Projects\Osu-NPS-Calculator-master\Osu-NPS-Calculator-master\Osu!DiffiCalc\bin\Debug\Osu!DiffiCalc.exe
+C:\Users\Erik\Documents\Visual Studio 2015\Projects\Osu-NPS-Calculator-master\Osu-NPS-Calculator-master\Osu!DiffiCalc\bin\Debug\Osu!DiffiCalc.pdb
+C:\Users\Erik\Documents\Visual Studio 2015\Projects\Osu-NPS-Calculator-master\Osu-NPS-Calculator-master\Osu!DiffiCalc\obj\Debug\Osu!DiffiCalc.csprojResolveAssemblyReference.cache
+C:\Users\Erik\Documents\Visual Studio 2015\Projects\Osu-NPS-Calculator-master\Osu-NPS-Calculator-master\Osu!DiffiCalc\obj\Debug\Osu_DiffiCalc.Form1.resources
+C:\Users\Erik\Documents\Visual Studio 2015\Projects\Osu-NPS-Calculator-master\Osu-NPS-Calculator-master\Osu!DiffiCalc\obj\Debug\Osu_DiffiCalc.Properties.Resources.resources
+C:\Users\Erik\Documents\Visual Studio 2015\Projects\Osu-NPS-Calculator-master\Osu-NPS-Calculator-master\Osu!DiffiCalc\obj\Debug\Osu!DiffiCalc.csproj.GenerateResource.Cache

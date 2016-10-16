@@ -37,7 +37,7 @@ namespace Osu_DiffiCalc.OsuMaps
                 if (line.StartsWith("Mode:"))
                 {
                     mode = int.Parse(line.Split(':')[1]);
-                    if (mode != Program.mode) { dump = true; return; }
+                    if (mode != 4 && mode != Program.mode) { dump = true; return; }
                 }
                 else if (line.StartsWith("Title:")) song = line.Split(':')[1];
                 else if (line.StartsWith("Artist:")) artist = line.Split(':')[1];

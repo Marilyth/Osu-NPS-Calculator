@@ -28,11 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NPS_Peak = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Song = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Difficulty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mapper = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Path = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -43,14 +51,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.NPS_Peak = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Song = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Difficulty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mapper = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Path = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -90,6 +91,72 @@
             this.dataGridView1.Size = new System.Drawing.Size(718, 238);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // NPS_Peak
+            // 
+            this.NPS_Peak.HeaderText = "NPS-Peak";
+            this.NPS_Peak.Name = "NPS_Peak";
+            this.NPS_Peak.ReadOnly = true;
+            this.NPS_Peak.Width = 82;
+            // 
+            // Level
+            // 
+            this.Level.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Level.HeaderText = "NPS-Avg";
+            this.Level.MinimumWidth = 45;
+            this.Level.Name = "Level";
+            this.Level.ReadOnly = true;
+            // 
+            // Artist
+            // 
+            this.Artist.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Artist.HeaderText = "Artist";
+            this.Artist.MinimumWidth = 50;
+            this.Artist.Name = "Artist";
+            this.Artist.ReadOnly = true;
+            this.Artist.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Song
+            // 
+            this.Song.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Song.HeaderText = "Song";
+            this.Song.MinimumWidth = 50;
+            this.Song.Name = "Song";
+            this.Song.ReadOnly = true;
+            this.Song.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Difficulty
+            // 
+            this.Difficulty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Difficulty.HeaderText = "Difficulty";
+            this.Difficulty.MinimumWidth = 50;
+            this.Difficulty.Name = "Difficulty";
+            this.Difficulty.ReadOnly = true;
+            // 
+            // Mapper
+            // 
+            this.Mapper.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Mapper.HeaderText = "Mapper";
+            this.Mapper.MinimumWidth = 50;
+            this.Mapper.Name = "Mapper";
+            this.Mapper.ReadOnly = true;
+            // 
+            // Path
+            // 
+            this.Path.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Path.HeaderText = "Path";
+            this.Path.MinimumWidth = 50;
+            this.Path.Name = "Path";
+            this.Path.ReadOnly = true;
+            this.Path.Visible = false;
+            // 
+            // Value
+            // 
+            this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Value.HeaderText = "HitObjects";
+            this.Value.MinimumWidth = 45;
+            this.Value.Name = "Value";
+            this.Value.ReadOnly = true;
             // 
             // button2
             // 
@@ -183,17 +250,17 @@
             this.chart1.BackColor = System.Drawing.Color.DimGray;
             this.chart1.BorderlineColor = System.Drawing.Color.Gray;
             this.chart1.BorderlineWidth = 50;
-            chartArea7.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chart1.Legends.Add(legend7);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(12, 309);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chart1.Series.Add(series7);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(719, 232);
             this.chart1.TabIndex = 9;
             this.chart1.Text = "chart1";
@@ -223,71 +290,17 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Object-skip:";
             // 
-            // NPS_Peak
+            // checkBox1
             // 
-            this.NPS_Peak.HeaderText = "NPS-Peak";
-            this.NPS_Peak.Name = "NPS_Peak";
-            this.NPS_Peak.ReadOnly = true;
-            this.NPS_Peak.Width = 82;
-            // 
-            // Level
-            // 
-            this.Level.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Level.HeaderText = "NPS-Avg";
-            this.Level.MinimumWidth = 45;
-            this.Level.Name = "Level";
-            this.Level.ReadOnly = true;
-            // 
-            // Artist
-            // 
-            this.Artist.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Artist.HeaderText = "Artist";
-            this.Artist.MinimumWidth = 50;
-            this.Artist.Name = "Artist";
-            this.Artist.ReadOnly = true;
-            this.Artist.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Song
-            // 
-            this.Song.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Song.HeaderText = "Song";
-            this.Song.MinimumWidth = 50;
-            this.Song.Name = "Song";
-            this.Song.ReadOnly = true;
-            this.Song.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Difficulty
-            // 
-            this.Difficulty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Difficulty.HeaderText = "Difficulty";
-            this.Difficulty.MinimumWidth = 50;
-            this.Difficulty.Name = "Difficulty";
-            this.Difficulty.ReadOnly = true;
-            // 
-            // Mapper
-            // 
-            this.Mapper.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Mapper.HeaderText = "Mapper";
-            this.Mapper.MinimumWidth = 50;
-            this.Mapper.Name = "Mapper";
-            this.Mapper.ReadOnly = true;
-            // 
-            // Path
-            // 
-            this.Path.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Path.HeaderText = "Path";
-            this.Path.MinimumWidth = 50;
-            this.Path.Name = "Path";
-            this.Path.ReadOnly = true;
-            this.Path.Visible = false;
-            // 
-            // Value
-            // 
-            this.Value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Value.HeaderText = "HitObjects";
-            this.Value.MinimumWidth = 45;
-            this.Value.Name = "Value";
-            this.Value.ReadOnly = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.checkBox1.Location = new System.Drawing.Point(13, 9);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(118, 17);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Active Osu Capture";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form1
             // 
@@ -297,6 +310,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(743, 551);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.chart1);
@@ -344,6 +358,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Mapper;
         private System.Windows.Forms.DataGridViewTextBoxColumn Path;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

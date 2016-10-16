@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.UI.DataVisualization.Charting;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace Osu_DiffiCalc
     {
         private Calculation.Basic diffiCalc;
         public int mode = -1;
+        System.Timers.Timer activeCapture;
+        private string pastTitle, tempPath;
 
         public Form1()
         {
@@ -136,6 +139,99 @@ namespace Osu_DiffiCalc
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             Program.objectSkip = (int)numericUpDown1.Value;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                if(tempPath == null)
+                {
+                    //Choose Songs Folder
+                    FolderBrowserDialog choose = new FolderBrowserDialog();
+
+                    DialogResult result = choose.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        tempPath = choose.SelectedPath;
+                    }
+                }
+
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+                radioButton4.Enabled = false;
+                radioButton5.Enabled = false;
+
+                button1.Enabled = false;
+                button2.Enabled = false;
+
+                activeCapture = new System.Timers.Timer(5000);
+                activeCapture.Elapsed += ActiveCapture_Elapsed1;
+                activeCapture.Start();
+            }
+            else
+            {
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
+                radioButton4.Enabled = true;
+                radioButton5.Enabled = true;
+
+                activeCapture.Stop();
+            }
+        }
+
+        public void UpdateUI(string matchingPaths)
+        {
+            diffiCalc.addMap(matchingPaths);
+
+            addRowRecent(diffiCalc.localMaps.Count - 1);
+
+            ResetChart();
+            try
+            {
+                OsuMaps.Map selectedMap = diffiCalc.localMaps.Find(x => x.filePath == matchingPaths);
+                foreach (OsuMaps.Object.HitObject obj in selectedMap.hitObjects)
+                {
+                    chart1.Series["Series1"].Points.AddXY(obj.time / 1000 + "s", obj.NPS);
+                }
+            }
+            catch (Exception) { }
+        }
+
+        [DllImport("user32.dll")]
+        static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll")]
+        static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+
+        private void ActiveCapture_Elapsed1(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            string title = GetActiveWindowTitle();
+
+            if (title != null && title.Length > 4 && title.StartsWith("osu!  -") && title != pastTitle)
+            {
+                pastTitle = title;
+                string[] map = title.Remove(0, 8).Split('[');
+                string[] matchingPaths = Directory.GetFiles(tempPath, $"*{map[0]}*{map[1]}*", SearchOption.AllDirectories);
+
+
+                this.Invoke(new Action<string>(UpdateUI), matchingPaths[0]);
+            }
+        }
+
+        private string GetActiveWindowTitle()
+        {
+            const int nChars = 256;
+            StringBuilder Buff = new StringBuilder(nChars);
+            IntPtr handle = GetForegroundWindow();
+
+            if (GetWindowText(handle, Buff, nChars) > 0)
+            {
+                return Buff.ToString();
+            }
+            return null;
         }
     }
 }

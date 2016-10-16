@@ -18,7 +18,7 @@ namespace Osu_DiffiCalc.Calculation
             OpenFileDialog choose = new OpenFileDialog();
             choose.Filter = "Osu! Files (.osu)|*.osu";
             DialogResult result = choose.ShowDialog();
-            if (result == DialogResult.OK) // Test result.
+            if (result == DialogResult.OK)
             {
                 string file = choose.FileName;
                 addMap(file);
@@ -47,7 +47,7 @@ namespace Osu_DiffiCalc.Calculation
             }
         }
 
-        private void addMap(string file)
+        public void addMap(string file)
         {
             localMaps.Add(new OsuMaps.Map(file));
 
