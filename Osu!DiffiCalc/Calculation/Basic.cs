@@ -59,26 +59,6 @@ namespace Osu_DiffiCalc.Calculation
                 return;
             }
 
-            //switch (OsuMaps.Map.gameMode(thisMap.mode))
-            //{
-            //    case "Mania":
-            //        thisMap.level = Advanced.Mania.setGetNPS(thisMap.hitObjects);
-            //        thisMap.peak = thisMap.hitObjects.Max(x => x.NPS);
-            //        break;
-            //    case "Taiko":
-            //        thisMap.level = Advanced.Taiko.setGetNPS(thisMap.hitObjects);
-            //        thisMap.peak = thisMap.hitObjects.Max(x => x.NPS);
-            //        break;
-            //    case "Catch the Beat":
-            //        thisMap.level = Advanced.Catch_the_Beat.setGetNPS(thisMap.hitObjects);
-            //        thisMap.peak = thisMap.hitObjects.Max(x => x.NPS);
-            //        break;
-            //    case "Standard":
-            //        thisMap.level = Advanced.Standard.setGetNPS(thisMap.hitObjects);
-            //        thisMap.peak = thisMap.hitObjects.Max(x => x.NPS);
-            //        break;
-            //}
-
             thisMap.level = Advanced.AllMode.setGetNPS(thisMap.hitObjects);
             if(thisMap.hitObjects.Count > 0) thisMap.peak = thisMap.hitObjects.Max(x => x.NPS);
         }

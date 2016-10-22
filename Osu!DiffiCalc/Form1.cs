@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Web.UI.DataVisualization.Charting;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Osu_DiffiCalc
@@ -156,28 +149,12 @@ namespace Osu_DiffiCalc
                         tempPath = choose.SelectedPath;
                     }
                 }
-
-                radioButton1.Enabled = false;
-                radioButton2.Enabled = false;
-                radioButton3.Enabled = false;
-                radioButton4.Enabled = false;
-                radioButton5.Enabled = false;
-
-                button1.Enabled = false;
-                button2.Enabled = false;
-
                 activeCapture = new System.Timers.Timer(5000);
                 activeCapture.Elapsed += ActiveCapture_Elapsed1;
                 activeCapture.Start();
             }
             else
             {
-                radioButton1.Enabled = true;
-                radioButton2.Enabled = true;
-                radioButton3.Enabled = true;
-                radioButton4.Enabled = true;
-                radioButton5.Enabled = true;
-
                 activeCapture.Stop();
             }
         }
@@ -214,7 +191,7 @@ namespace Osu_DiffiCalc
             {
                 pastTitle = title;
                 string[] map = title.Remove(0, 8).Split('[');
-                string[] matchingPaths = Directory.GetFiles(tempPath, $"*{map[0]}*{map[1]}*", SearchOption.AllDirectories);
+                string[] matchingPaths = Directory.GetFiles(tempPath, $"*{map[0].Split(System.IO.Path.GetInvalidFileNameChars())[0]}*[{map[1].Split(System.IO.Path.GetInvalidFileNameChars())[0]}*", SearchOption.AllDirectories);
 
 
                 this.Invoke(new Action<string>(UpdateUI), matchingPaths[0]);
