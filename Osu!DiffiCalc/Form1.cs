@@ -187,7 +187,7 @@ namespace Osu_DiffiCalc
         {
             string title = GetActiveWindowTitle();
 
-            if (title != null && title.Length > 4 && title.StartsWith("osu!  -") && title != pastTitle)
+            if (title != null && title.Length > 7 && title.StartsWith("osu!  -") && title != pastTitle)
             {
                 pastTitle = title;
                 string[] map = title.Remove(0, 8).Split('[');
@@ -200,11 +200,10 @@ namespace Osu_DiffiCalc
 
         private string GetActiveWindowTitle()
         {
-            const int nChars = 256;
-            StringBuilder Buff = new StringBuilder(nChars);
+            StringBuilder Buff = new StringBuilder(256);
             IntPtr handle = GetForegroundWindow();
 
-            if (GetWindowText(handle, Buff, nChars) > 0)
+            if (GetWindowText(handle, Buff, 256) > 0)
             {
                 return Buff.ToString();
             }
