@@ -37,17 +37,17 @@ namespace Osu_DiffiCalc.OsuMaps
                 if (line.StartsWith("Mode:"))
                 {
                     mode = int.Parse(line.Split(':')[1]);
-                    if (mode != 4 && mode != Program.mode) { dump = true; return; }
+                    if (Program.mode != 4 && mode != Program.mode) { dump = true; return; }
                 }
                 else if (line.StartsWith("Title:")) song = line.Split(':')[1];
                 else if (line.StartsWith("Artist:")) artist = line.Split(':')[1];
                 else if (line.StartsWith("Creator:")) mapper = line.Split(':')[1];
                 else if (line.StartsWith("Version:")) difficulty = line.Split(':')[1];
-                else if (Program.mode == 3 && line.StartsWith("CircleSize:"))
+                else if ((Program.mode == 3 || Program.mode == 4) && line.StartsWith("CircleSize:"))
                 {
                     int columns = int.Parse(line.Split(':')[1]);
-                    if (Program.is4k && columns != 4) { dump = true; return; }
-                    else if (!Program.is4k && columns != 7) { dump = true; return; }
+                    if (Program.is4k && columns != 4 && Program.mode != 4) { dump = true; return; }
+                    else if (!Program.is4k && columns != 7 && Program.mode != 4) { dump = true; return; }
                 }
                 else if (line.StartsWith("[HitObjects]"))
                 {

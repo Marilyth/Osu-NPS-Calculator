@@ -10,7 +10,6 @@ namespace Osu_DiffiCalc
     public partial class Form1 : Form
     {
         private Calculation.Basic diffiCalc;
-        public int mode = -1;
         System.Timers.Timer activeCapture;
         private string pastTitle, tempPath;
 
@@ -152,6 +151,8 @@ namespace Osu_DiffiCalc
                 activeCapture = new System.Timers.Timer(5000);
                 activeCapture.Elapsed += ActiveCapture_Elapsed1;
                 activeCapture.Start();
+
+                Program.mode = 4;
             }
             else
             {

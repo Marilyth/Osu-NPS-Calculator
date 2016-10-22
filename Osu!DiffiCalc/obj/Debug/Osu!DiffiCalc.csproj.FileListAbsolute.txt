@@ -19,3 +19,9 @@ C:\Users\Erik\Documents\Visual Studio 2015\Projects\Osu-NPS-Calculator-master\Os
 C:\Users\May\Documents\Visual Studio 2015\Projects\GitHub\Osu-NPS-Calculator\Osu!DiffiCalc\bin\Debug\Osu!DiffiCalc.exe.config
 C:\Users\May\Documents\Visual Studio 2015\Projects\GitHub\Osu-NPS-Calculator\Osu!DiffiCalc\obj\Debug\Osu!DiffiCalc.exe
 C:\Users\May\Documents\Visual Studio 2015\Projects\GitHub\Osu-NPS-Calculator\Osu!DiffiCalc\obj\Debug\Osu!DiffiCalc.pdb
+C:\Users\May\Documents\Visual Studio 2015\Projects\GitHub\Osu-NPS-Calculator\Osu!DiffiCalc\bin\Debug\Osu!DiffiCalc.exe
+C:\Users\May\Documents\Visual Studio 2015\Projects\GitHub\Osu-NPS-Calculator\Osu!DiffiCalc\bin\Debug\Osu!DiffiCalc.pdb
+C:\Users\May\Documents\Visual Studio 2015\Projects\GitHub\Osu-NPS-Calculator\Osu!DiffiCalc\obj\Debug\Osu!DiffiCalc.csprojResolveAssemblyReference.cache
+C:\Users\May\Documents\Visual Studio 2015\Projects\GitHub\Osu-NPS-Calculator\Osu!DiffiCalc\obj\Debug\Osu_DiffiCalc.Form1.resources
+C:\Users\May\Documents\Visual Studio 2015\Projects\GitHub\Osu-NPS-Calculator\Osu!DiffiCalc\obj\Debug\Osu_DiffiCalc.Properties.Resources.resources
+C:\Users\May\Documents\Visual Studio 2015\Projects\GitHub\Osu-NPS-Calculator\Osu!DiffiCalc\obj\Debug\Osu!DiffiCalc.csproj.GenerateResource.Cache
