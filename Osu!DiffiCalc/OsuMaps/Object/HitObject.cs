@@ -8,14 +8,12 @@ namespace Osu_DiffiCalc.OsuMaps.Object
 {
     class HitObject
     {
-        public int time, positionX, positionY;
+        public int time, countMania;
         public int NPS { get; set; }
 
-        public HitObject(int objectXPos, int objectYPos, int objectTime)
+        public HitObject(int objectTime)
         {
             time = objectTime;
-            positionX = objectXPos;
-            positionY = objectYPos;
         }
     }
 }

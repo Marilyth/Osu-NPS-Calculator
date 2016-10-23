@@ -64,7 +64,7 @@ namespace Osu_DiffiCalc
             {
                 int path = (int)dataGridView1.Rows[e.RowIndex].Cells[6].Value;
                 OsuMaps.Map selectedMap = diffiCalc.localMaps.Find(x => x.autoID == path);
-                foreach (OsuMaps.Object.HitObject obj in selectedMap.hitObjects)
+                foreach (OsuMaps.Object.HitObject obj in selectedMap.hitObjects.Values)
                 {
                     chart1.Series["Series1"].Points.AddXY(obj.time / 1000 + "s", obj.NPS);
                 }
@@ -170,7 +170,7 @@ namespace Osu_DiffiCalc
             try
             {
                 OsuMaps.Map selectedMap = diffiCalc.localMaps.Find(x => x.filePath == matchingPaths);
-                foreach (OsuMaps.Object.HitObject obj in selectedMap.hitObjects)
+                foreach (OsuMaps.Object.HitObject obj in selectedMap.hitObjects.Values)
                 {
                     chart1.Series["Series1"].Points.AddXY(obj.time / 1000 + "s", obj.NPS);
                 }

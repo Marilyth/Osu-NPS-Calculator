@@ -1,29 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Osu_DiffiCalc.Calculation.Advanced
 {
     class AllMode
     {
-        internal static double setGetNPS(List<Osu_DiffiCalc.OsuMaps.Object.HitObject> transSet)
+        internal static double setGetNPS(SortedList<int, OsuMaps.Object.HitObject> transSet)
         {
             int skip = Program.objectSkip, count = 0;
-            List<Osu_DiffiCalc.OsuMaps.Object.HitObject> newSet = new List<OsuMaps.Object.HitObject>();
 
-
-            foreach (OsuMaps.Object.HitObject obj in transSet)
+            foreach (OsuMaps.Object.HitObject obj in transSet.Values)
             {
                 if(!(count < skip))
                 {
-                    obj.NPS =
-                    (from hitObject in transSet
-                    where hitObject.time <= obj.time && hitObject.time >= obj.time - 1000
-                    select hitObject).Count();
-
-                    newSet.Add(obj);
+                    obj.NPS = transSet.Count(x => x.Key <= obj.time && x.Key >= obj.time - 1000);
 
                     count = 0;
                 }
@@ -32,8 +23,7 @@ namespace Osu_DiffiCalc.Calculation.Advanced
             }
             try
             {
-                transSet = newSet;
-                return transSet.Average(x => x.NPS);
+                return transSet.Average(x => x.Value.NPS);
             }
             catch (Exception) { return Double.NaN; }
         }

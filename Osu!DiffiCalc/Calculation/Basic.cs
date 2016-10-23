@@ -60,7 +60,7 @@ namespace Osu_DiffiCalc.Calculation
             }
 
             thisMap.level = Advanced.AllMode.setGetNPS(thisMap.hitObjects);
-            if(thisMap.hitObjects.Count > 0) thisMap.peak = thisMap.hitObjects.Max(x => x.NPS);
+            if(thisMap.hitObjects.Count > 0) thisMap.peak = thisMap.hitObjects.Max(x => x.Value.NPS);
         }
     }
 }

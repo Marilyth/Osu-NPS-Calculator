@@ -15,18 +15,20 @@ namespace Osu_DiffiCalc.OsuMaps
         public double peak { get; set; }
         public bool dump = false;
 
-        public List<Object.HitObject> hitObjects;
+        public SortedList<int, Object.HitObject> hitObjects;
 
         public Map(string path)
         {
             autoID = Program.autoID;
             Program.autoID++;
-            hitObjects = new List<Object.HitObject>();
+            hitObjects = new SortedList<int, Object.HitObject>();
             readFile(path);
         }
 
         private void readFile(string path)
         {
+            List<Object.HitObject> tempHitObjects = new List<Object.HitObject>();
+
             filePath = path;
 
             StreamReader sr = new StreamReader(path);
@@ -56,7 +58,7 @@ namespace Osu_DiffiCalc.OsuMaps
                         string[] lineInformation = line.Split(',');
                         try
                         {
-                            hitObjects.Add(new Object.HitObject(int.Parse(lineInformation[0]), int.Parse(lineInformation[1]), int.Parse(lineInformation[2])));
+                            tempHitObjects.Add(new Object.HitObject(int.Parse(lineInformation[2])));
                         }
                         catch (Exception)
                         {
@@ -64,6 +66,8 @@ namespace Osu_DiffiCalc.OsuMaps
                         }
                     }
                 }
+
+                hitObjects = new SortedList<int, Object.HitObject>(tempHitObjects.ToDictionary(x => x.time));
             }
         }
 
