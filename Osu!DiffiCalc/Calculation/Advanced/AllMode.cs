@@ -12,18 +12,15 @@ namespace Osu_DiffiCalc.Calculation.Advanced
         {
             int skip = Program.objectSkip, count = 0;
             List<Osu_DiffiCalc.OsuMaps.Object.HitObject> newSet = new List<OsuMaps.Object.HitObject>();
-
+            newSet = transSet;
 
             foreach (OsuMaps.Object.HitObject obj in transSet)
             {
                 if(!(count < skip))
                 {
-                    obj.NPS =
-                    (from hitObject in transSet
-                    where hitObject.time <= obj.time && hitObject.time >= obj.time - 1000
-                    select hitObject).Count();
+                    newSet = newSet.SkipWhile(x => x.time < obj.time - 1000).ToList();
 
-                    newSet.Add(obj);
+                    obj.NPS = newSet.IndexOf(obj) +1;
 
                     count = 0;
                 }
@@ -32,7 +29,6 @@ namespace Osu_DiffiCalc.Calculation.Advanced
             }
             try
             {
-                transSet = newSet;
                 return transSet.Average(x => x.NPS);
             }
             catch (Exception) { return Double.NaN; }
